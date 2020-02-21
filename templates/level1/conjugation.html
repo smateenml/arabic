@@ -1,9 +1,29 @@
 {% extends 'base.html' %}
 {% block body %}
+
 {% include 'navbar.html' %}
 {% include 'level1/navbar.html' %}
+
 <main>
-    
+  <br>
+  <div class="container">
+    <div class="row center-align">
+      <a class="waves-effect waves-light btn btn-large">
+        <h5>إضافة</h5>
+      </a>
+      <p>انقر على الزر أعلاه لإضافة اقتران جديد</p>
+    </div>
+    <!-- <hr> -->
+    <div class="row">
+      <div class="input-field red-text col s4 pull-s4">
+        <i class="red-text material-icons prefix">search</i>
+        <input type="text" placeholder="search" id="autocomplete-input" class="autocomplete red-text">
+      </div>
+    </div>
+    <div class="row">
+      {% include 'level1/table.html' %}
+    </div>
+  </div>
 </main>
 {% include 'footer.html' %}
-{% endblock %}
+{% endblock body %}

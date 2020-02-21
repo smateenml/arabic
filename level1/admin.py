@@ -1,3 +1,3 @@
 from django.contrib import admin
-
-# Register your models here.
+from level1.models import Conjugation
+admin.site.register(Conjugation)
