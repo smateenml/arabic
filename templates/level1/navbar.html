@@ -1,7 +1,16 @@
 <nav role="navigation">
     <div class="nav-wrapper container">
         <ul class="right">
-            <li class="active"><a href="sass.html">المترافقة</a></li>
+            <li class="active"><a href="{% url 'level1:conjugation' %}">المترافقة</a></li>
         </ul>
+        <div class="row">
+          <form name="search_form" method="POST" action=".">
+            {% csrf_token %}
+            <div class="input-field white-text col s4 pull-s8">
+              <i class="white-text material-icons prefix">search</i>
+              <input type="text" placeholder="ابحث" name="search" class="white-text" autofocus>
+            </div>
+          </form>
+          </div>
     </div>
 </nav>

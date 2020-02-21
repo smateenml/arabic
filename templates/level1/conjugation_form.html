@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load materializecss %}
+{% block body %}
+
+{% include 'navbar.html' %}
+{% include 'level1/navbar.html' %}
+
+<main>
+    <br>
+    <div class="container">
+        <div class="row center-align col">
+            <div class="col s6 pull-s3">
+            <h5>Add a new word with its conjugations</h5>
+            <form method="post">{% csrf_token %}
+                {{ form | materializecss }}
+                <input class="waves-effect waves-light btn" type="submit" value="Save">
+            </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% include 'footer.html' %}
+{% endblock body %}
