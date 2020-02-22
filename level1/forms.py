@@ -1,7 +1,7 @@
 from django import forms
 from level1.models import Conjugation
 
-class ConjugationCreateForm(forms.ModelForm):
+class ConjugationForm(forms.ModelForm):
     class Meta:
         model = Conjugation
         fields = ['he_past','she_past','you_male_past','you_female_past','i_past','we_past',

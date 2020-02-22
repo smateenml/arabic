@@ -1,10 +1,11 @@
 from django.shortcuts import render, HttpResponse
 from django.db.models import Q
 
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 from level1.models import Conjugation
-from level1.forms import ConjugationCreateForm
+from level1.forms import ConjugationForm
 
 def conjugation(request):
 
@@ -19,5 +20,16 @@ def conjugation(request):
 
 class ConjugationCreate(CreateView):
     model = Conjugation
-    form_class = ConjugationCreateForm
-    success_url = '/level1/conjugation/'
+    form_class = ConjugationForm
+    success_url = reverse_lazy('level1:conjugation')
+
+class ConjugationUpdate(UpdateView):
+    model = Conjugation
+    form_class = ConjugationForm
+    template_name_suffix = '_update_form'
+    success_url = reverse_lazy('level1:conjugation')
+
+class ConjugationDelete(DeleteView):
+    model = Conjugation
+    form_class = ConjugationForm
+    success_url = reverse_lazy('level1:conjugation')

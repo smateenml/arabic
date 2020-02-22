@@ -1,6 +1,7 @@
 <!-- past -->
-<div class="col s6">
-    <table class="highlight centered resposive-table">
+<font size="4" class="">
+<div class="col s12">
+    <table class="highlight centered striped resposive-table">
         <!-- table head -->
         <thead class="grey">
             <tr>
@@ -10,6 +11,7 @@
                 <th>انتِ</th>
                 <th>انا</th>
                 <th>نحن</th>
+                <th><i class="black-text material-icons prefix">menu</i></th>
             </tr>
         </thead>
 
@@ -17,46 +19,19 @@
         <tbody>
             {% for c in conjugations %}
             <tr>
-                <td>{{ c.he_past }}</td>
-                <td>{{ c.she_past }}</td>
-                <td>{{ c.you_male_past }}</td>
-                <td>{{ c.you_female_past }}</td>
-                <td>{{ c.i_past }}</td>
-                <td>{{ c.we_past }}</td>
+                <td>{{ c.he_past }} - {{ c.he_present }}</td>
+                <td>{{ c.she_past }} - {{ c.she_present }}</td>
+                <td>{{ c.you_male_past }} - {{ c.you_male_present }}</td>
+                <td>{{ c.you_female_past }} - {{ c.you_female_present }}</td>
+                <td>{{ c.i_past }} - {{ c.i_present }}</td>
+                <td>{{ c.we_past }} - {{ c.we_present }}</td>
+                <td>
+                    <a href="{% url 'level1:conjugation-delete' c.id %}"><i class="black-text material-icons prefix md-18">clear</i></a>
+                    <a href="{% url 'level1:conjugation-update' c.id %}"><i class="black-text material-icons prefix md-18">edit</i></a>
+                </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
-
-<!-- present -->
-<div class="col s6">
-    <table class="highlight centered resposive-table">
-        <!-- table head -->
-        <thead class="grey">
-            <tr>
-                <th>هو</th>
-                <th>هي</th>
-                <th>انتَ</th>
-                <th>انتِ</th>
-                <th>انا</th>
-                <th>نحن</th>
-            </tr>
-        </thead>
-
-        <!-- table body -->
-        <tbody>
-            {% for c in conjugations %}
-            <tr>
-                <td>{{ c.he_present }}</td>
-                <td>{{ c.she_present }}</td>
-                <td>{{ c.you_male_present }}</td>
-                <td>{{ c.you_female_present }}</td>
-                <td>{{ c.i_present }}</td>
-                <td>{{ c.we_present }}</td>
-
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+</font>

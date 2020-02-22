@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load materializecss %}
+{% block body %}
+
+{% include 'navbar.html' %}
+{% include 'level1/navbar.html' %}
+
+<main>
+    <br>
+    <div class="container">
+        <div class="row center-align col">
+            <div class="col s6 pull-s3">
+            <h5>Delete confirmation</h5>
+            <form method="post">
+                {% csrf_token %}
+                <p>?"{{ object }}" Are you sure you want to delete</p>
+                <input class="waves-effect waves-light btn" type="submit" value="Confirm">
+            </form>
+            </div>
+        </div>
+    </div>
+</main>
+{% include 'footer.html' %}
+{% endblock body %}
