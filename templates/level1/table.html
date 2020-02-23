@@ -12,6 +12,12 @@
                 <th>انا</th>
                 <th>نحن</th>
                 <th><i class="black-text material-icons prefix">menu</i></th>
+                <th>هو</th>
+                <th>هي</th>
+                <th>انتَ</th>
+                <th>انتِ</th>
+                <th>انا</th>
+                <th>نحن</th>
             </tr>
         </thead>
 
@@ -19,16 +25,22 @@
         <tbody>
             {% for c in conjugations %}
             <tr>
-                <td>{{ c.he_past }} - {{ c.he_present }}</td>
-                <td>{{ c.she_past }} - {{ c.she_present }}</td>
-                <td>{{ c.you_male_past }} - {{ c.you_male_present }}</td>
-                <td>{{ c.you_female_past }} - {{ c.you_female_present }}</td>
-                <td>{{ c.i_past }} - {{ c.i_present }}</td>
-                <td>{{ c.we_past }} - {{ c.we_present }}</td>
+                <td>{{ c.he_past }}</td>
+                <td>{{ c.she_past }}</td>
+                <td>{{ c.you_male_past }}</td>
+                <td>{{ c.you_female_past }}</td>
+                <td>{{ c.i_past }}</td>
+                <td>{{ c.we_past }}</td>
                 <td>
                     <a href="{% url 'level1:conjugation-delete' c.id %}"><i class="black-text material-icons prefix md-18">clear</i></a>
                     <a href="{% url 'level1:conjugation-update' c.id %}"><i class="black-text material-icons prefix md-18">edit</i></a>
                 </td>
+                <td>{{ c.he_present }}</td>
+                <td>{{ c.she_present }}</td>
+                <td>{{ c.you_male_present }}</td>
+                <td>{{ c.you_female_present }}</td>
+                <td>{{ c.i_present }}</td>
+                <td>{{ c.we_present }}</td>
             </tr>
             {% endfor %}
         </tbody>
